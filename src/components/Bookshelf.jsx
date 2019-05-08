@@ -1,11 +1,13 @@
 import React from "react";
+import Books from "./Book";
 
-const Bookshelf = () => {
+const Bookshelf = props => {
   return (
-    <form>
-      <input type="text" />
-      <button>Search</button>
-    </form>
+    <ul>
+      {props.books.map((book, index) => (
+        <Books book={book} index={index} key={index} />
+      ))}
+    </ul>
   );
 };
 
